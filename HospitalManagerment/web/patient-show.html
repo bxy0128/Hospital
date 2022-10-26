@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>病人信息</title>
+  <link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css" media="all">
+</head>
+<body>
+
+<table id="demo" lay-filter="test"></table>
+<script src="//unpkg.com/layui@2.6.8/dist/layui.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
+<script>
+  //第一个实例
+  var table = layui.table;
+  table.render({
+    elem : '#demo'
+    ,height: 700
+    ,url: "/json/Patient.json"//数据接口
+    ,page: true //开启分页
+    ,cols: [[ //表头
+      { field: "patient_id", title: 'ID', width: 80,sort: true, fixed: 'left' },
+      { field: 'patient_name', title: '病人姓名', edit:true,width: 120 },
+      { field: 'patient_gender', title: '性别', edit:true,width: 120 },
+      { field: 'patient_date_start', title: '入院日期',edit:true, width: 120 },
+      { field: 'patient_dept', title: '科室', edit:true,width: 120 },
+      { field: 'patient_area', title: '住址' ,edit:true, width: 120},
+      { field: 'patient_doc_id', title: '主治医生编号' , edit:true,width: 120},
+      { field: 'patient_age', title: '病人年龄' ,edit:true, width:120},
+      { field: 'patient_condition', title: '住院情况' , edit:true,width: 120},
+      { field: 'patient_phone', title: '住院情况' , edit:true,width: 120},
+    ]]
+  });
+  table.on('edit(test)', function (obj) {//修改
+    $ = layui.jquery;
+    layer = layui.layer;
+    var checkStatus = obj.data;
+    var content = JSON.stringify(checkStatus);
+    //修改的数据
+    var input = JSON.parse(content);
+    console.log(checkStatus)
+    console.log(content)
+    console.log(input)
+    // $.get("${pageContext.request.contextPath}/a3",input)
+    $.ajax({
+      type: "post",
+      url: "update",
+      contentType:"application/json;charset=UTF-8",
+      data:content,
+      success:function (data){
+        // console.log(data);
+      }
+
+    })
+
+
+  });
+
+</script>
+</body>
+</html>
