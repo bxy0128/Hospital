@@ -1,9 +1,10 @@
 package org.room803.data;
 
-import com.alibaba.fastjson2.JSONArray;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import net.sf.json.JSONArray;
 
 @Data //自动设置方法
 @AllArgsConstructor //有参构造器
@@ -16,5 +17,12 @@ public class Layui {
     String msg;
     int count;
     JSONArray data;
+
+    public JSONArray getData() {
+        return data;
+    }
+    public void setData(JSONArray data){
+        this.data = data;
+    }
 
 }

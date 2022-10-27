@@ -5,6 +5,8 @@ import org.room803.data.*;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @RestController
@@ -19,6 +21,8 @@ public class AjaxController {
         sql.Update("Patient", patient.getPatient_id(), patient.getPatient_name(), patient.getPatient_gender()
                 , patient.getPatient_date_start(), patient.getPatient_dept(), patient.getPatient_area(),
                 patient.getPatient_doc_id(), patient.getPatient_age(), patient.getPatient_condition(), patient.getPatient_phone());
+        ResultSet r1 =  sql.ShowTable("Patient");
+        ToJson.resultSetToJson(r1,"Patient");
         return patient;
     }
 

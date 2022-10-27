@@ -44,15 +44,17 @@ public class ToJson {
         patient.setCode(0);//固定格式
         patient.setMsg("success");//固定格式
         patient.setCount(100);//数据的总个数
-        patient.setData(com.alibaba.fastjson2.JSONArray.of(array));//查询的List集合
+        patient.setData(JSONArray.fromObject(array));//查询的List集合
+        System.out.println(patient.getData());
         Gson g = new Gson();
         String s1 = g.toJson(patient);//json文件
         JSONObject jsonObject = JSONObject.fromObject(s1);
-        String s2 = "source/"+ s + ".json";
+        String s2 = "web/json/"+ s + ".json";
         File file = new File(s2);//将获取到的数据库列表传输到source文件夹内
         try {
             FileUtils.write(file, jsonObject.toString(), "utf-8", false);
             System.out.println("ok");
+            System.out.println(file);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

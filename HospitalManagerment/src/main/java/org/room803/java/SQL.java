@@ -23,7 +23,7 @@ public class SQL {
                    String userName;
                     String userPwd;
                     // 连接数据库的语句
-                    url = "jdbc:sqlserver://192.168.1.106:1433;DatabaseName=Hospital";//数据库连接地址
+                    url = "jdbc:sqlserver://192.168.1.102:1433;DatabaseName=Hospital";//数据库连接地址
 
                     userName = "sa";//数据库连接名
                     userPwd = "123456";//数据库连接密码
@@ -67,25 +67,31 @@ public class SQL {
                       + ","+"patient_area"+ " = "+ "'"+values[4]+"'"+ ","+"patient_doc_id"+ " = "+ values[5]
                       + ","+"patient_age"+ " = "+ values[6]+ ","+"patient_condition"+ " = "+ "'"+values[7]+"'"
                       + ","+"patient_phone"+ " = "+ "'"+values[8]+"'"
-                        + " where "+s1+ "_id"+  " ="+i );
+                        + " WHERE "+" patient_id"+  " ="+i );
+                break;
+
             case "Doctor"://医生修改
-                alter = sql.executeUpdate("UPDATE "+s1 + " set "+"doctor_name" + " = " + "'"+values[0] +"'"+","+
+                alter = sql.executeUpdate("UPDATE "+s1 + " set "+" doctor_name" + " = " + "'"+values[0] +"'"+","+
                         "doctor_gender" + "=" + "'"+values[1] +"'"+","+"doctor_dept_id" + "=" + values[2] +","
                         +"doctor_phone" + "=" + "'"+values[0] +"'"+
-                        "where" + s1 + "_id" + " = " + i);
+                        " where " + s1 + "_id" + " = " + i);
+                break;
             case "Ward"://病床修改
                 alter = sql.executeUpdate("UPDATE "+ s1 +" set "+"patient_inhospital_id"+ " = "+ values[0]+"," +
                         "ward_dept_id"+ " = "+ values[1]+","+"ward_bednum"+ " = "+ values[2]+","+
                         "patient_date_start"+ " = "+ "'"+values[2]+"'" +
                         " where " + s1 +"_id" + "=" + i );
+                break;
             case "Medicine"://药物修改
                 alter = sql.executeUpdate("UPDATE " + s1 + " set "+ "medicine_name" + "'"+ values[0]+"'"+","
                         + "medicine_price" + values[0] +","+ "medicine_quantify" +  values[0] +
                         " where " + s1 +"_id" + "=" + i );
+                break;
             case "Med_Instruments"://医疗仪器修改
                 alter = sql.executeUpdate("UPDATE " + s1 + " set "+ "med_instruments_name" + "'"+ values[0]+"'"+","
                         + "med_instruments_price" + values[0] +","+ "med_instruments_quantity" +  values[0] +
                         " where " + s1 +"_id" + "=" + i);
+                break;
 
         }
 
