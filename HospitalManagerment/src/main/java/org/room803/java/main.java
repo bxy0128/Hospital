@@ -1,4 +1,4 @@
-package com.hospital.java;
+package org.room803.java;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

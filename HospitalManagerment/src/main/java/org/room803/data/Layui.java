@@ -1,4 +1,5 @@
-package com.hospital.Data;
+package org.room803.data;
+
 import com.alibaba.fastjson2.JSONArray;
 import lombok.AllArgsConstructor;
 import lombok.Data;
