@@ -17,7 +17,7 @@ public class Doctor {
 
     public String set() {
         String s;
-        s = "(" + doctor_id + "," + doctor_name + "," + doctor_gender + "," + doctor_dept_id + "," + "doctor_phone" + ")";
+        s = "(" + doctor_id + "," + doctor_name + "," + doctor_gender + "," + doctor_dept_id + "," + doctor_phone + ")";
         //在数据库查询中，需要用到的(值1，值2，值3...)
         return s;
 

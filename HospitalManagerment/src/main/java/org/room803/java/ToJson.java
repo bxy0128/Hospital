@@ -49,7 +49,7 @@ public class ToJson {
         Gson g = new Gson();
         String s1 = g.toJson(patient);//json文件
         JSONObject jsonObject = JSONObject.fromObject(s1);
-        String s2 = "web/json/"+ s + ".json";
+        String s2 = "D:\\桌面\\Hospital\\HospitalManagerment\\web\\json\\"+ s + ".json";
         File file = new File(s2);//将获取到的数据库列表传输到source文件夹内
         try {
             FileUtils.write(file, jsonObject.toString(), "utf-8", false);

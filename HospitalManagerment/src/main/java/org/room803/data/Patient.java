@@ -26,10 +26,8 @@ public class Patient {
 
     public String set() {
         String s;
-        s = "(" + patient_id + "," + patient_name + "," + patient_gender
-                + "," + patient_date_start + ","
-                + patient_dept + "," + patient_area + "," +
-                patient_doc_id + "," + patient_age + "," + patient_condition + "," + patient_phone + ")";
+        s = "(" + patient_id + "," + "'"+patient_name + "'"+ "," + "'"+ patient_gender +"'"+ "," + "'"+patient_date_start+"'" + ","
+                +"'"+ patient_dept+"'" + "," +"'"+ patient_area +"'"+ "," + patient_doc_id + "," + patient_age + "," +"'"+ patient_condition + "'"+"," + "'"+patient_phone +"'"+ ")";
         //在数据库查询中，需要用到的(值1，值2，值3...)
         return s;
 

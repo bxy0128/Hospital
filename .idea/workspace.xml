@@ -9,24 +9,62 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="949e9575-9c5a-421a-8725-bff66263c4f3" name="变更" comment="11点30分">
-      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/json/Ward.json" afterDir="false" />
+    <list default="true" id="949e9575-9c5a-421a-8725-bff66263c4f3" name="变更" comment="15点32分  10-27">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/AddMed_Instruments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/Adddoctor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/Addmedicine.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/Addpatient.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/Addward.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/CSS/adminLogin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/Doctor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/EditorDoctor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/EditorDoctor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/EditorMed_instruments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/EditorMed_instruments.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/EditorMedicine.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/EditorMedicine.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/EditorPatient.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/EditorPatient.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/EditorWard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/EditorWard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/FunctionJs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/Med_Instruments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/Medicine.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/Patient.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/Ward.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/bj6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/json/Doctor.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/json/Med_Instruments.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/json/Medicine.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalManagerment/web/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/data/Layui.java" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/data/Layui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/data/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/data/Doctor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/data/Med_Instruments.java" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/data/Med_Instruments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/data/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/data/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/data/Ward.java" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/data/Ward.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/data/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/data/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/java/AjaxController.java" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/java/AjaxController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/java/SQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/java/SQL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/java/ToJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/java/ToJson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/java/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/java/main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HospitalManagerment/web/json/Patient.json" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/web/json/Patient.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospitalManagerment/web/patient-show.html" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/web/patient-show.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Patient.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/patient-show.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalManagerment/web/json/Ward.json" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/web/json/Ward.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalManagerment/web/patient-show.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,38 +87,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/桌面/Hospital/HospitalManagerment/web/json&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;库&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2632184&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;c0710949eeadc246eb80c039cae1694c&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ShowUsagesActions.previewPropertyKey": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "D:/桌面/Hospital/HospitalManagerment/web/ADD",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2632184",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "spring.configuration.checksum": "c0710949eeadc246eb80c039cae1694c"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\桌面\Hospital\HospitalManagerment\web" />
       <recent name="D:\桌面\Hospital\HospitalManagerment\web\json" />
       <recent name="D:\桌面\Hospital\HospitalManagerment\src\main\java\org\room803\java" />
       <recent name="D:\桌面\Hospital\HospitalManagerment\src\main\java\org\room803\data" />
-      <recent name="D:\桌面\Hospital\HospitalManagerment\web" />
       <recent name="D:\桌面\Hospital\web" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\桌面\Hospital\HospitalManagerment\web" />
+      <recent name="D:\桌面\Hospital\HospitalManagerment\web\ADD" />
+      <recent name="D:\桌面\Hospital\HospitalManagerment\web\json" />
+      <recent name="D:\桌面\Hospital\HospitalManagerment\web\WEB-INF" />
+      <recent name="D:\桌面\Hospital\HospitalManagerment\web\CSS" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat 服务器.Tomcat 9">
@@ -97,7 +142,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="AddMed_Instruments.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Hospital/HospitalManagerment/web/AddMed_Instruments.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="EditorMed_instruments.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Hospital/HospitalManagerment/web/EditorMed_instruments.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="EditorMedicine.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Hospital/HospitalManagerment/web/EditorMedicine.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Patient.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Hospital/HospitalManagerment/web/Patient.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Tomcat 9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="11" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="HospitalManagerment:war exploded">
@@ -108,6 +165,16 @@
         <file path="$PROJECT_DIR$/HospitalManagerment/web/json">
           <settings>
             <option name="CONTEXT_PATH" value="/json" />
+          </settings>
+        </file>
+        <file path="$PROJECT_DIR$/HospitalManagerment/web/CSS">
+          <settings>
+            <option name="CONTEXT_PATH" value="/CSS" />
+          </settings>
+        </file>
+        <file path="$PROJECT_DIR$/HospitalManagerment/web/ADD">
+          <settings>
+            <option name="CONTEXT_PATH" value="/ADD" />
           </settings>
         </file>
       </deployment>
@@ -190,12 +257,20 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JavaScript 调试.AddMed_Instruments.html" />
+      <item itemvalue="JavaScript 调试.EditorMed_instruments.html" />
+      <item itemvalue="JavaScript 调试.EditorMedicine.html" />
+      <item itemvalue="JavaScript 调试.Patient.html" />
       <item itemvalue="Tomcat 服务器.Tomcat 9" />
       <item itemvalue="应用程序.main" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="应用程序.main" />
+        <item itemvalue="JavaScript 调试.Patient.html" />
+        <item itemvalue="JavaScript 调试.AddMed_Instruments.html" />
+        <item itemvalue="JavaScript 调试.EditorMedicine.html" />
+        <item itemvalue="JavaScript 调试.EditorMed_instruments.html" />
       </list>
     </recent_temporary>
   </component>
@@ -212,7 +287,19 @@
       <workItem from="1666846740845" duration="1662000" />
       <workItem from="1666848422280" duration="1224000" />
       <workItem from="1666849665233" duration="483000" />
-      <workItem from="1666850164243" duration="5629000" />
+      <workItem from="1666850164243" duration="7962000" />
+      <workItem from="1666887009838" duration="3283000" />
+      <workItem from="1666890314823" duration="2096000" />
+      <workItem from="1666923000467" duration="17898000" />
+      <workItem from="1666949633529" duration="3851000" />
+      <workItem from="1666955780431" duration="3325000" />
+      <workItem from="1666959610123" duration="7545000" />
+      <workItem from="1667037202961" duration="1906000" />
+      <workItem from="1667385674366" duration="2929000" />
+      <workItem from="1667441339217" duration="25000" />
+      <workItem from="1667528907847" duration="2984000" />
+      <workItem from="1667651167383" duration="14817000" />
+      <workItem from="1667826059582" duration="4920000" />
     </task>
     <task id="LOCAL-00001" summary="11点30分">
       <created>1666841689263</created>
@@ -228,7 +315,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666854927773</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="15点32分  10-27">
+      <created>1666855954994</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1666855954994</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +342,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="11点30分" />
-    <option name="LAST_COMMIT_MESSAGE" value="11点30分" />
+    <MESSAGE value="15点32分  10-27" />
+    <option name="LAST_COMMIT_MESSAGE" value="15点32分  10-27" />
   </component>
 </project>

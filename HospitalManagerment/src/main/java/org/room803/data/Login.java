@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data //自动设置方法
 @AllArgsConstructor //有参构造器
 @NoArgsConstructor //无参构造器
-public class login {
+public class Login {
     private String Login_name;
     private String Password;
 
