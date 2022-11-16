@@ -33,7 +33,7 @@ function createTable(t, editor, deltes, read) {
         table.render({
             elem: '#' + (t.id || 'test')
             , height: 700
-            , url: 'json/'+page +'.json' //数据接口
+            , url: 'json/Medicine.json' //数据接口
             , page: true //开启分页
             ,cols: [ //表头
                 t.cols

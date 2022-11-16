@@ -7,6 +7,17 @@
  * @returns {}
  */
 function createTable(t, editor, deltes, read) {
+    var $ = layui.$;
+    var abc = 1;
+    $.ajax({
+        url: "renovate",
+        type:"post",
+        data: {temp:abc},
+        success: function (data) {
+           console.log(data);
+        }
+
+    })
     var bodys = document.getElementsByTagName("body")[0];
     bodys.innerHTML += '<table class="layui-hide" id="test" lay-filter="demo"></' + 'table>' +
         '<script type="text/html" id="barDemo">' +
@@ -33,7 +44,7 @@ function createTable(t, editor, deltes, read) {
         table.render({
             elem: '#' + (t.id || 'test')
             , height: 700
-            , url: 'json/'+page +'.json' //数据接口
+            , url: 'json/Ward.json' //数据接口
             , page: true //开启分页
             ,cols: [ //表头
                 t.cols

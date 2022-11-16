@@ -12,12 +12,12 @@ public class Doctor {
     private int doctor_id;//医生编号
     private String doctor_name;//医生姓名
     private String doctor_gender;//医生性别
-    private String doctor_dept_id;//医生科室编号
+    private String doctor_dept;//医生科室编号
     private String doctor_phone;//医生电话
 
     public String set() {
         String s;
-        s = "(" + doctor_id + "," + doctor_name + "," + doctor_gender + "," + doctor_dept_id + "," + doctor_phone + ")";
+        s = "(" + doctor_id + "," + doctor_name + "," + doctor_gender + "," + doctor_dept + "," + doctor_phone + ")";
         //在数据库查询中，需要用到的(值1，值2，值3...)
         return s;
 
@@ -25,7 +25,7 @@ public class Doctor {
 
     public String list() {
         String s;
-        s = "(doctor_id,doctor_name, doctor_gender, doctor_dept_id, doctor_phone)";
+        s = "(doctor_id,doctor_name, doctor_gender, doctor_dept, doctor_phone)";
         return s;
 
         //在数据库查询中，需要用到(列名1，列名2，列名3...)

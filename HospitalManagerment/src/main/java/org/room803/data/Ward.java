@@ -25,7 +25,7 @@ public class Ward {
 
 
         s = "("+ward_id+","+ward_bednum+","+"'"+patient_date_start+"'"+","+patient_inhospital_id+","+
-                "\'"+ward_dept+"\'" +")";
+                "'" +ward_dept+ "'" +")";
 
         //在数据库查询中，需要用到的(值1，值2，值3...)
         return s;

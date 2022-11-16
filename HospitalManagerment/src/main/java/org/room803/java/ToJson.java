@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.SQLOutput;
+
 public class ToJson {
     /*
     * 将数据库中的表提取出来，打包成json文件
@@ -21,7 +23,7 @@ public class ToJson {
     *  ResultSet r1 =  sql1.ShowTable("Login");
         ToJson.resultSetToJson(r1,"Login");
     */
-    public static void resultSetToJson(ResultSet rs,String s) throws SQLException, JSONException
+    public static String resultSetToJson(ResultSet rs,String s) throws SQLException, JSONException
     {
         // json数组
         JSONArray array = new JSONArray();
@@ -39,15 +41,18 @@ public class ToJson {
             }
             array.add(jsonObj);
         }
-        System.out.println(array);
         Layui patient = new Layui();
         patient.setCode(0);//固定格式
         patient.setMsg("success");//固定格式
         patient.setCount(100);//数据的总个数
         patient.setData(JSONArray.fromObject(array));//查询的List集合
-        System.out.println(patient.getData());
         Gson g = new Gson();
         String s1 = g.toJson(patient);//json文件
+        System.out.println(array);
+        String s99 = array.toString();
+        System.out.println(s99);
+        System.out.println("测试");
+        System.out.println(s1);
         JSONObject jsonObject = JSONObject.fromObject(s1);
         String s2 = "D:\\桌面\\Hospital\\HospitalManagerment\\web\\json\\"+ s + ".json";
         File file = new File(s2);//将获取到的数据库列表传输到source文件夹内
@@ -59,6 +64,7 @@ public class ToJson {
             throw new RuntimeException(e);
         }
 
+return s99;
 
     }
 

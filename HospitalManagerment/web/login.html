@@ -126,21 +126,41 @@
 
     // 登录流程
     function login() {
+var yes;
         var loginUsername = $('#loginUsername').val();
         var loginPassword = $('#loginPassword').val();
+        const json = {
+            "Login_name": loginUsername,
+            "Password": loginPassword
+        }
+        console.log(json);
+        var json2 = JSON.stringify(json);
+        console.log(json2);
+        $.ajax({
+            url: 'Logincheck',
+            type: 'post',
+            contentType:"application/json;charset=utf-8",
+            data:json2,
+            success: function () {
+                console.log("success");
+               open("index.html");
+
+            },
+            error: function () {
+               layui.alert("用户名或密码错误");
+            }
+        })
+        console.log(yes);
         // var params = {};
         // params.loginUsername = loginUsername;
         // params.loginPassword = loginPassword;
         if (!validateCode('#loginCard', '#loginCode')) {
             //阻断提示
 
-        } else if($.trim(loginUsername) == '1'  && $.trim(loginPassword) == '1'){
+        }
 
-              location.href=window.location.href;
-              location.href='6.html';
 
-            }
-            else{layer.alert("用户名或密码有误！");}
+
 
     }
 

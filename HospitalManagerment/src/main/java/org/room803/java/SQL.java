@@ -48,9 +48,12 @@ public class SQL {
   //登陆检测
   public int LoginCheck(String s1,String s2) throws SQLException {
       ResultSet rs;
+      System.out.println(s1);
+      System.out.println(s2);
       {
           try {
-              rs = sql.executeQuery("SELECT * FROM Login WHERE Login_name = " + s1 + "AND Password = " +s2);
+              rs = sql.executeQuery("SELECT * FROM Login WHERE Login_name = " + "'"+s1 + "'"
+                      + "AND Password = " + "'" +s2 + "'");
           } catch (SQLException e) {
               throw new RuntimeException(e);
           }
@@ -86,25 +89,40 @@ public class SQL {
 
             case "Doctor"://医生修改
                 alter = sql.executeUpdate("UPDATE "+s1 + " set "+" doctor_name" + " = " + "'"+values[0] +"'"+","+
-                        "doctor_gender" + "=" + "'"+values[1] +"'"+","+"doctor_dept_id" + "=" + values[2] +","
-                        +"doctor_phone" + "=" + "'"+values[0] +"'"+
+                        "doctor_gender" + "=" + "'"+values[1] +"'"+","+"doctor_dept" + "=" +"'"+ values[2]+"'" +","
+                        +"doctor_phone" + "=" + "'"+values[3] +"'"+
                         " where " + s1 + "_id" + " = " + i);
                 break;
             case "Ward"://病床修改
-                alter = sql.executeUpdate("UPDATE "+ s1 +" set "+"patient_inhospital_id"+ " = "+ values[0]+"," +
-                        "ward_dept_id"+ " = "+ values[1]+","+"ward_bednum"+ " = "+ values[2]+","+
-                        "patient_date_start"+ " = "+ "'"+values[2]+"'" +
+                alter = sql.executeUpdate("UPDATE "+ s1 +" set "+
+                        "ward_bednum"+ " = "+ values[0]+"," +
+                        "patient_date_start"+ " = "+"'"+ values[1]+
+                        "'"+","+"patient_inhospital_id"+ " = "+ values[2]+","+
+                        "ward_dept"+ " = "+ "'"+values[3]+"'" +
                         " where " + s1 +"_id" + "=" + i );
                 break;
             case "Medicine"://药物修改
-                alter = sql.executeUpdate("UPDATE " + s1 + " set "+ "medicine_name" + "'"+ values[0]+"'"+","
-                        + "medicine_price" + values[0] +","+ "medicine_quantify" +  values[0] +
+                alter = sql.executeUpdate("UPDATE " + s1 + " set "+ "medicine_name" + " = "+"'"+ values[0]+"'"+","
+                        + "medicine_price" + " = "+values[1] +","+ "medicine_quantity" + " = "+ values[2] +
                         " where " + s1 +"_id" + "=" + i );
+                System.out.println(alter);
                 break;
             case "Med_Instruments"://医疗仪器修改
-                alter = sql.executeUpdate("UPDATE " + s1 + " set "+ "med_instruments_name" + "'"+ values[0]+"'"+","
-                        + "med_instruments_price" + values[0] +","+ "med_instruments_quantity" +  values[0] +
+                alter = sql.executeUpdate("UPDATE " + s1 + " set "+ "med_instruments_name" +  " = "+"'"+values[0]+"'"+","
+                        + "med_instruments_price" + " = "+values[1] +","+ "med_instruments_quantity" +" = "+  values[2] +
                         " where " + s1 +"_id" + "=" + i);
+                System.out.println(alter);
+                break;
+            case "ToOrder" ://医嘱修改
+                alter = sql.executeUpdate("UPDATE " + s1 + " set "+
+                        "order_id" +values[0]+","+
+                        "patient_id" +values[1]+","+
+                        "doctor_id" +values[2]+","+
+                        "medicine_id" +values[3]+","+
+                        "med_instruments_id" +values[4]+","+
+                        "order_time" +"'"+values[5]+"'"+","+
+
+                        " where " + "order" +"_id" + "=" + i);
                 break;
 
         }
@@ -160,6 +178,14 @@ public class SQL {
             alter = sql.executeUpdate("INSERT INTO " + s1  + " VALUES " + z1.set());//list已知，set需设置
             System.out.println(z1.set());
             break;
+            case "ToOrder"://医嘱
+            ToOrder t1 = new ToOrder(i,values[0],values[1],values[2],values[3],values[4]);
+            String s27 = "INSERT into " + s1  + " values " + t1.set();
+            System.out.println(s27);
+            alter = sql.executeUpdate("INSERT INTO " + s1  + " VALUES " + t1.set());//list已知，set需设置
+            System.out.println(t1.set());
+            break;
+
     }
 
     }
@@ -175,6 +201,57 @@ public class SQL {
         alter = sql.executeUpdate("DELETE FROM "+s1+" WHERE "+s2+" = "+ i);
         System.out.println("删除成功");
     }
+    public ResultSet Search(String s1,int i) throws SQLException {
+        int alter;
+        ResultSet rs = null;
+        switch (s1) {
+            case "Patient": {
+                try {
+                    rs = sql.executeQuery("SELECT * FROM " + s1 + " WHERE " + s1 + "_id = " + i);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            break;
+            case "Doctor": {
+                try {
+                    rs = sql.executeQuery("SELECT * FROM " + s1 + " WHERE " + s1 + "_id = " + i);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            break;
+            case "Medicine": {
+                try {
+                    rs = sql.executeQuery("SELECT * FROM " + s1 + " WHERE " + s1 + "_id = " + i);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            break;
+            case "Med_Instruments": {
+                try {
+                    rs = sql.executeQuery("SELECT * FROM " + s1 + " WHERE " + s1 + "_id = " + i);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            break;
+            case "Ward": {
+                try {
+                    rs = sql.executeQuery("SELECT * FROM " + s1 + " WHERE " + s1 + "_id = " + i);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            break;
+
+
+
+        }
+        return rs;
+    }
+
 }
 
 

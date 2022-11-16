@@ -17,6 +17,19 @@
     position: fixed;
     opacity: 0.75;
 }
+.loginForm1{
+    margin-left: 25%;
+    margin-top: 11%;
+    /*background-color: #cccccc;*/
+
+    background-color: white;
+    width: 600px;
+    height: 350px;
+    float: left;
+    z-index: 9999;
+    position: fixed;
+    opacity: 0.75;
+}
 .usernameLabel{
     width: 60px;
     height: 30px;
@@ -157,6 +170,8 @@ img{
     width: 100px;
     height: 100px;
 }
+
+
 
 
 

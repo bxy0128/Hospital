@@ -2,6 +2,7 @@ package org.room803.java;
 import org.room803.data.*;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,6 +20,29 @@ public class AjaxController {
         return i;//1
     }
 
+    @RequestMapping("/renovate")//删除药物
+    public String renovate(@RequestBody String a) throws SQLException {
+
+        //由于@RestController注解，将list转成json格式返回
+
+        SQL sql1 = new SQL();
+        // 模拟表格封装成json测试，封装在source//.json
+        ResultSet r1 = sql1.ShowTable("Ward");
+        ToJson.resultSetToJson(r1, "Ward");
+        ResultSet r2 = sql1.ShowTable("Patient");
+        ToJson.resultSetToJson(r2, "Patient");
+        ResultSet r3 = sql1.ShowTable("Medicine");
+        ToJson.resultSetToJson(r3, "Medicine");
+        ResultSet r4 = sql1.ShowTable("Doctor");
+        ToJson.resultSetToJson(r4, "Doctor");
+        ResultSet r5 = sql1.ShowTable("Med_instruments");
+        ToJson.resultSetToJson(r5, "Med_instruments");
+        System.out.println("success");
+
+        return "success";
+
+
+    }
 
 
     @RequestMapping("/Med_Instrumentsupdate")//更新医疗仪器
@@ -26,7 +50,7 @@ public class AjaxController {
         System.out.println(med_instruments);
         //由于@RestController注解，将list转成json格式返回
         SQL sql = new SQL();
-        sql.Update("Medicine", med_instruments.getMed_instruments_id(), med_instruments.getMed_instruments_name()
+        sql.Update("Med_Instruments", med_instruments.getMed_instruments_id(), med_instruments.getMed_instruments_name()
                 , med_instruments.getMed_instruments_price(), med_instruments.getMed_instruments_quantity());
         return med_instruments;
 
@@ -37,12 +61,12 @@ public class AjaxController {
 
         //由于@RestController注解，将list转成json格式返回
         SQL sql = new SQL();
-        sql.delete("med_instruments", "med_instruments_id", med_instruments.getMed_instruments_id());
+        sql.delete("Med_Instruments", "med_instruments_id", med_instruments.getMed_instruments_id());
         System.out.println(med_instruments);
         return med_instruments;
     }
 
-    @RequestMapping("/Med_Instrumentsinserts")//
+    @RequestMapping("/Med_instrumentsinsert")
     public Med_Instruments Med_Instrumentsinsert(@RequestBody Med_Instruments med_Instruments) throws SQLException {
         System.out.println(med_Instruments);
         //由于@RestController注解，将list转成json格式返回
@@ -54,127 +78,95 @@ public class AjaxController {
     }
 
 
-        @RequestMapping("/Wardinsert")//增加病床
-        public Ward Wardinsert(@RequestBody Ward ward) throws SQLException {
-            System.out.println(ward);
-            //由于@RestController注解，将list转成json格式返回
-            SQL sql = new SQL();
-            sql.Insert("Ward", ward.getWard_id(), ward.getWard_bednum(), ward.getPatient_date_start(),
-                    ward.getPatient_inhospital_id(), ward.getWard_dept());
+    @RequestMapping("/Warddelete")//删除病床
+    public Ward WardDelete(@RequestBody Ward ward) throws SQLException {
 
-            return ward;
-        }
-        @RequestMapping("/Warddelete")//删除病床
-        public Ward WardDelete(@RequestBody Ward ward) throws SQLException {
+        //由于@RestController注解，将list转成json格式返回
+        SQL sql = new SQL();
 
-            //由于@RestController注解，将list转成json格式返回
-            SQL sql = new SQL();
+        System.out.println(ward);
+        sql.delete("Ward", "Ward_id", ward.getWard_id());
+        ResultSet r1 = sql.ShowTable("Ward");
+        ToJson.resultSetToJson(r1, "Ward");
+        return ward;
+    }
 
-            System.out.println(ward);
-            sql.delete("Ward", "Ward_id", ward.getWard_id());
-            ResultSet r1 =  sql.ShowTable("Ward");
-            ToJson.resultSetToJson(r1,"Ward");
-            return ward;
-        }
-        @RequestMapping("/Wardupdate")//更新病床
-        public Ward WardUpdate(@RequestBody Ward ward) throws SQLException {
-            System.out.println(ward);
-            //由于@RestController注解，将list转成json格式返回
-            SQL sql = new SQL();
-            sql.Update("Ward", ward.getWard_id(), ward.getPatient_inhospital_id(),
-                    ward.getWard_dept(), ward.getWard_bednum(), ward.getPatient_date_start());
-            return ward;
-        }
+    @RequestMapping("/Wardinsert")//增加病床
+    public Ward Wardinsert(@RequestBody Ward ward) throws SQLException {
+        System.out.println(ward);
+        //由于@RestController注解，将list转成json格式返回
+        SQL sql = new SQL();
+        sql.Insert("Ward", ward.getWard_id(), ward.getWard_bednum(), ward.getPatient_date_start(),
+                ward.getPatient_inhospital_id(), ward.getWard_dept());
 
+        return ward;
+    }
 
-        @RequestMapping("/Medicineinsert")//增加药物
-        public Medicine Medicineinsert(@RequestBody Medicine medicine) throws SQLException {
-            System.out.println(medicine);
-            //由于@RestController注解，将list转成json格式返回
-            SQL sql = new SQL();
-            sql.Insert("Medicine", medicine.getMedicine_id(), medicine.getMedicine_name(), medicine.getMedicine_price(),
-                    medicine.getMedicine_quantify());
-
-            return medicine;
-        }
-        @RequestMapping("/Medicinedelete")//删除药物
-        public Medicine MedicineDelete(@RequestBody Medicine medicine) throws SQLException {
-
-            //由于@RestController注解，将list转成json格式返回
-            SQL sql = new SQL();
-            sql.delete("medicine", "medicine_id", medicine.getMedicine_id());
-            System.out.println(medicine);
-            return medicine;
-        }
-        @RequestMapping("/Medicineupdate")//更新药物
-        public Medicine MedicineUpdate(@RequestBody Medicine medicine) throws SQLException {
-            System.out.println(medicine);
-            //由于@RestController注解，将list转成json格式返回
-            SQL sql = new SQL();
-            sql.Update("Medicine", medicine.getMedicine_id(), medicine.getMedicine_name(), medicine.getMedicine_price()
-                    , medicine.getMedicine_quantify());
-            return medicine;
-
-        }
+    @RequestMapping("/Wardupdate")//更新病床
+    public Ward WardUpdate(@RequestBody Ward ward) throws SQLException {
+        System.out.println(ward);
+        //由于@RestController注解，将list转成json格式返回
+        SQL sql = new SQL();
+        sql.Update("Ward", ward.getWard_id(), ward.getWard_bednum(), ward.getPatient_date_start(),
+                ward.getPatient_inhospital_id(), ward.getWard_dept());
+        return ward;
+    }
 
 
+    @RequestMapping("/Medicineinsert")//增加药物
+    public Medicine Medicineinsert(@RequestBody Medicine medicine) throws SQLException {
+        System.out.println(medicine);
+        //由于@RestController注解，将list转成json格式返回
+        SQL sql = new SQL();
+        sql.Insert("Medicine", medicine.getMedicine_id(), medicine.getMedicine_name(), medicine.getMedicine_price(),
+                medicine.getMedicine_quantity());
+
+        return medicine;
+    }
+
+    @RequestMapping("/Medicinedelete")//删除药物
+    public Medicine MedicineDelete(@RequestBody Medicine medicine) throws SQLException {
+
+        //由于@RestController注解，将list转成json格式返回
+        SQL sql = new SQL();
+        sql.delete("Medicine", "medicine_id", medicine.getMedicine_id());
+        System.out.println(medicine);
+        return medicine;
+    }
+
+    @RequestMapping("/Medicineupdate")//更新药物
+    public Medicine MedicineUpdate(@RequestBody Medicine medicine) throws SQLException {
+        System.out.println(medicine);
+        //由于@RestController注解，将list转成json格式返回
+        SQL sql = new SQL();
+        sql.Update("Medicine", medicine.getMedicine_id(), medicine.getMedicine_name(), medicine.getMedicine_price()
+                , medicine.getMedicine_quantity());
+        return medicine;
+
+    }
 
 
-        @RequestMapping("/Patientinsert")//增加病人
-        public Patient patient(@RequestBody Patient patient) throws SQLException {
-            System.out.println(patient);
-            //由于@RestController注解，将list转成json格式返回
-            SQL sql = new SQL();
-            sql.Insert("Patient", patient.getPatient_id(), patient.getPatient_name(), patient.getPatient_gender(),
-                    patient.getPatient_date_start(), patient.getPatient_dept(), patient.getPatient_area(),
-                    patient.getPatient_doc_id(), patient.getPatient_age(),patient.getPatient_condition(), patient.getPatient_phone());
+    @RequestMapping("/Patientinsert")//增加病人
+    public Patient patient(@RequestBody Patient patient) throws SQLException {
+        System.out.println(patient);
+        //由于@RestController注解，将list转成json格式返回
+        SQL sql = new SQL();
+        sql.Insert("Patient", patient.getPatient_id(), patient.getPatient_name(), patient.getPatient_gender(),
+                patient.getPatient_date_start(), patient.getPatient_dept(), patient.getPatient_area(),
+                patient.getPatient_doc_id(), patient.getPatient_age(), patient.getPatient_condition(), patient.getPatient_phone());
 
-            return patient;
-        }
-        @RequestMapping("/Patientdelete")//删除病人
-        public Patient PatientDelete(@RequestBody Patient patient) throws SQLException {
+        return patient;
+    }
 
-            //由于@RestController注解，将list转成json格式返回
-            SQL sql = new SQL();
-            sql.delete("Patient", "Patient_id", patient.getPatient_id());
-            System.out.println(patient);
-            return patient;
-        }
+    @RequestMapping("/Patientdelete")//删除病人
+    public Patient PatientDelete(@RequestBody Patient patient) throws SQLException {
 
-
-
-
-
-
-        @RequestMapping("/Doctorupdate")//更新医生
-        public Doctor DoctorUpdate(@RequestBody Doctor doctor) throws SQLException {
-            System.out.println(doctor);
-            //由于@RestController注解，将list转成json格式返回
-            SQL sql = new SQL();
-            sql.Update("Doctor", doctor.getDoctor_id(), doctor.getDoctor_name(), doctor.getDoctor_gender()
-                    , doctor.getDoctor_dept_id(), doctor.getDoctor_phone());
-            return doctor;
-        }
-        @RequestMapping("/Doctorinsert")//增加医生
-        public Doctor Doctorinsert(@RequestBody Doctor doctor) throws SQLException {
-            System.out.println(doctor);
-            //由于@RestController注解，将list转成json格式返回
-            SQL sql = new SQL();
-            sql.Insert("Doctor", doctor.getDoctor_id(), doctor.getDoctor_name(), doctor.getDoctor_gender(),doctor.getDoctor_dept_id(),
-                    doctor.getDoctor_phone());
-
-            return doctor;
-        }
-        @RequestMapping("/Doctordelete")//删除医生
-        public Doctor DoctorDelete(@RequestBody Doctor doctor) throws SQLException {
-
-            //由于@RestController注解，将list转成json格式返回
-            SQL sql = new SQL();
-            sql.delete("Doctor", "Doctor_id", doctor.getDoctor_id());
-            System.out.println(doctor);
-            return doctor;
-        }
-
+        //由于@RestController注解，将list转成json格式返回
+        SQL sql = new SQL();
+        sql.delete("Patient", "Patient_id", patient.getPatient_id());
+        System.out.println(patient);
+        return patient;
+    }
 
     @RequestMapping("/Patientupdate")//更新病人
     public Patient PatientUpdate(@RequestBody Patient patient) throws SQLException {
@@ -184,8 +176,134 @@ public class AjaxController {
         sql.Update("Patient", patient.getPatient_id(), patient.getPatient_name(), patient.getPatient_gender()
                 , patient.getPatient_date_start(), patient.getPatient_dept(), patient.getPatient_area(),
                 patient.getPatient_doc_id(), patient.getPatient_age(), patient.getPatient_condition(), patient.getPatient_phone());
-        ResultSet r1 =  sql.ShowTable("Patient");
-        ToJson.resultSetToJson(r1,"Patient");
+        ResultSet r1 = sql.ShowTable("Patient");
+        ToJson.resultSetToJson(r1, "Patient");
         return patient;
     }
+
+
+    @RequestMapping("/Doctorupdate")//更新医生
+    public Doctor DoctorUpdate(@RequestBody Doctor doctor) throws SQLException {
+        System.out.println(doctor);
+        //由于@RestController注解，将list转成json格式返回
+        SQL sql = new SQL();
+        sql.Update("Doctor", doctor.getDoctor_id(), doctor.getDoctor_name(), doctor.getDoctor_gender()
+                , doctor.getDoctor_dept(), doctor.getDoctor_phone());
+        return doctor;
+    }
+
+    @RequestMapping("/Doctorinsert")//增加医生
+    public Doctor Doctorinsert(@RequestBody Doctor doctor) throws SQLException {
+        System.out.println(doctor);
+        //由于@RestController注解，将list转成json格式返回
+        SQL sql = new SQL();
+        sql.Insert("Doctor", doctor.getDoctor_id(), doctor.getDoctor_name(), doctor.getDoctor_gender(), doctor.getDoctor_dept(),
+                doctor.getDoctor_phone());
+
+        return doctor;
+    }
+
+    @RequestMapping("/Doctordelete")//删除医生
+    public Doctor DoctorDelete(@RequestBody Doctor doctor) throws SQLException {
+
+        //由于@RestController注解，将list转成json格式返回
+        SQL sql = new SQL();
+        sql.delete("Doctor", "Doctor_id", doctor.getDoctor_id());
+        System.out.println(doctor);
+        return doctor;
+    }
+
+    @RequestMapping("/ToOrderupdate")//订单更新
+    public ToOrder ToOrderupdate(@RequestBody ToOrder toOrder) throws SQLException {
+
+        //由于@RestController注解，将list转成json格式返回
+        SQL sql = new SQL();
+        sql.Update("ToOrder", toOrder.getOrder_id(), toOrder.getMedicine_id(), toOrder.getDoctor_id(), toOrder.getMedicine_id()
+                , toOrder.getMed_instruments_id(), toOrder.getOrder_time());
+
+        System.out.println(toOrder);
+        return toOrder;
+    }
+
+    @RequestMapping(value ="Doctorsearch",method = RequestMethod.POST, produces = "text/html; charset=UTF-8")//病人查询
+    public String Doctorsearch(@RequestBody String s1) throws SQLException {
+String s2 = s1.substring(3);
+int i = Integer.valueOf(s2).intValue();
+
+        //由于@RestController注解，将list转成json格式返回
+        SQL sql = new SQL();
+        ResultSet r1 =  sql.Search("Doctor",i);
+
+
+
+        return ToJson.resultSetToJson(r1,"Temp");
+
+
+
+    }
+    @RequestMapping(value ="Wardsearch",method = RequestMethod.POST, produces = "text/html; charset=UTF-8")//病人查询
+    public String Wardsearch(@RequestBody String s1) throws SQLException {
+        String s2 = s1.substring(3);
+        int i = Integer.valueOf(s2).intValue();
+
+        //由于@RestController注解，将list转成json格式返回
+        SQL sql = new SQL();
+        ResultSet r1 =  sql.Search("Ward",i);
+
+
+
+        return ToJson.resultSetToJson(r1,"Temp");
+
+
+
+    }
+    @RequestMapping(value ="Medicinesearch",method = RequestMethod.POST, produces = "text/html; charset=UTF-8")//病人查询
+    public String Medicinesearch(@RequestBody String s1) throws SQLException {
+        String s2 = s1.substring(3);
+        int i = Integer.valueOf(s2).intValue();
+
+        //由于@RestController注解，将list转成json格式返回
+        SQL sql = new SQL();
+        ResultSet r1 =  sql.Search("Medicine",i);
+
+
+
+        return ToJson.resultSetToJson(r1,"Temp");
+
+
+
+    }
+    @RequestMapping(value ="Med_Instrumentssearch",method = RequestMethod.POST, produces = "text/html; charset=UTF-8")//病人查询
+    public String Med_Instrumentssearch(@RequestBody String s1) throws SQLException {
+        String s2 = s1.substring(3);
+        int i = Integer.valueOf(s2).intValue();
+
+        //由于@RestController注解，将list转成json格式返回
+        SQL sql = new SQL();
+        ResultSet r1 =  sql.Search("Med_Instruments",i);
+
+
+
+        return ToJson.resultSetToJson(r1,"Temp");
+
+
+
+    } @RequestMapping(value ="Patientsearch",method = RequestMethod.POST, produces = "text/html; charset=UTF-8")//病人查询
+    public String Patientsearch(@RequestBody String s1) throws SQLException {
+        String s2 = s1.substring(3);
+        int i = Integer.valueOf(s2).intValue();
+
+        //由于@RestController注解，将list转成json格式返回
+        SQL sql = new SQL();
+        ResultSet r1 =  sql.Search("Patient",i);
+
+
+
+        return ToJson.resultSetToJson(r1,"Temp");
+
+
+
+    }
+
+
 }
