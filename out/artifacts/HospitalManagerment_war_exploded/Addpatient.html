@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css">
+<link rel="stylesheet" href="CSS/adminLogin.css">
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<table class="addpatient">
+
+    <div class="WrapDiv">
+        <div class="Label">
+            <label>病人编号:</label>
+        </div>
+        <div class="Div">
+            <i class="layui-icon  adminIcon"></i>
+            <input id="patient_id" class="layui-input adminInput" type="text" name="username"
+                   placeholder="请输入">
+        </div>
+    </div>
+    <div class="WrapDiv">
+        <div class="Label">
+            <label>姓名:</label>
+        </div>
+        <div class="Div">
+            <i class="layui-icon  adminIcon"></i>
+            <input id="patient_name" class="layui-input adminInput" type="text" name="username"
+                   placeholder="请输入">
+        </div>
+    </div>
+    <div class="WrapDiv">
+        <div class="Label">
+            <label>性别:</label>
+        </div>
+        <div class="Div">
+            <i class="layui-icon  adminIcon"></i>
+            <input id="patient_gender" class="layui-input adminInput" type="text" name="username"
+                   placeholder="请输入">
+        </div>
+    </div>
+    <div class="WrapDiv">
+        <div class="Label">
+            <label>住院日期:</label>
+        </div>
+        <div class="Div">
+            <i class="layui-icon  adminIcon"></i>
+            <input id="patient_date_start" class="layui-input adminInput" type="text" name="username"
+                   placeholder="请输入">
+        </div>
+    </div>
+    <div class="WrapDiv">
+        <div class="Label">
+            <label>病因类型:</label>
+        </div>
+        <div class="Div">
+            <i class="layui-icon  adminIcon"></i>
+            <input id="patient_dept" class="layui-input adminInput" type="text" name="username"
+                   placeholder="请输入">
+        </div>
+    </div>
+    <div class="WrapDiv">
+        <div class="Label">
+            <label>住址:</label>
+        </div>
+        <div class="Div">
+            <i class="layui-icon  adminIcon"></i>
+            <input id="patient_area" class="layui-input adminInput" type="text" name="username"
+                   placeholder="请输入">
+        </div>
+    </div>
+    <div class="WrapDiv">
+        <div class="Label">
+            <label>主治医师编号:</label>
+        </div>
+        <div class="Div">
+            <i class="layui-icon  adminIcon"></i>
+            <input id="patient_doc_id" class="layui-input adminInput" type="text" name="username"
+                   placeholder="请输入">
+        </div>
+    </div>
+    <div class="WrapDiv">
+        <div class="Label">
+            <label>年龄:</label>
+        </div>
+        <div class="Div">
+            <i class="layui-icon  adminIcon"></i>
+            <input id="patient_age" class="layui-input adminInput" type="text" name="username"
+                   placeholder="请输入">
+        </div>
+    </div>
+    <div class="WrapDiv">
+        <div class="Label">
+            <label>是否入院:</label>
+        </div>
+        <div class="Div">
+            <i class="layui-icon  adminIcon"></i>
+            <input id="patient_condition" class="layui-input adminInput" type="text" name="username"
+                   placeholder="请输入">
+        </div>
+    </div>
+    <div class="WrapDiv">
+        <div class="Label">
+            <label>电话:</label>
+        </div>
+        <div class="Div">
+            <i class="layui-icon  adminIcon"></i>
+            <input id="patient_phone" class="layui-input adminInput" type="text" name="username"
+                   placeholder="请输入">
+        </div>
+    </div>
+    <button class="submit1 layui-btn layui-btn-primary" onclick="save()">保存</button>
+</table>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+<script>
+    function save() {
+        alert("保存成功");
+        var patient_id = $('#patient_id').val();
+        var patient_name = $('#patient_name').val();
+        var patient_gender = $('#patient_gender').val();
+        var patient_date_start = $('#patient_date_start').val();
+        var patient_dept = $('#patient_dept').val();
+        var patient_area = $('#patient_area').val();
+        var patient_doc_id = $('#patient_doc_id').val();
+        var patient_age = $('#patient_age').val();
+        var patient_condition = $('#patient_condition').val();
+        var patient_phone = $('#patient_phone').val();
+        var jsonObj = {
+            "patient_id":patient_id,
+            "patient_name":patient_name,
+            "patient_gender":patient_gender,
+            "patient_date_start":patient_date_start,
+            "patient_dept":patient_dept,
+            "patient_area":patient_area,
+            "patient_doc_id":patient_doc_id,
+            "patient_age":patient_age,
+            "patient_condition":patient_condition,
+            "patient_phone":patient_phone,
+        }
+        var content = JSON.stringify(jsonObj)
+        console.log(jsonObj)
+        console.log(content)
+        $.ajax({
+            type: "post",
+            url: "Patientinsert",//*+insert
+            contentType:"application/json;charset=UTF-8",
+            data:content,
+            success:function (data){
+                console.log(data);
+            }
+
+        })
+    }
+
+</script>
+</body>
+</html>

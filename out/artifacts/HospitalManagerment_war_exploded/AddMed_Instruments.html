@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css">
+<link rel="stylesheet" href="CSS/adminLogin.css">
+
+<script src="//unpkg.com/layui@2.6.8/dist/layui.js"></script>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<table class="addmedicine">
+
+  <div class="WrapDiv">
+    <div class="Label">
+      <label>治疗仪器编号:</label>
+    </div>
+    <div class="Div">
+      <i class="layui-icon  adminIcon"></i>
+      <input id="med_instruments_id" class="layui-input adminInput" type="text" name="username"
+             placeholder="请输入">
+    </div>
+  </div>
+  <div class="WrapDiv">
+    <div class="Label">
+      <label>治疗仪器名称:</label>
+    </div>
+    <div class="Div">
+      <i class="layui-icon  adminIcon"></i>
+      <input id="med_instruments_name" class="layui-input adminInput" type="text" name="username"
+             placeholder="请输入">
+    </div>
+  </div>
+  <div class="WrapDiv">
+    <div class="Label">
+      <label>治疗仪器价格:</label>
+    </div>
+    <div class="Div">
+      <i class="layui-icon  adminIcon"></i>
+      <input id="med_instruments_price" class="layui-input adminInput" type="text" name="username"
+             placeholder="请输入">
+    </div>
+  </div>
+  <div class="WrapDiv">
+    <div class="Label">
+      <label>治疗仪器数量:</label>
+    </div>
+    <div class="Div">
+      <i class="layui-icon  adminIcon"></i>
+      <input id="med_instruments_quantity" class="layui-input adminInput" type="text" name="username"
+             placeholder="请输入">
+    </div>
+  </div>
+  <button class="submit1 layui-btn layui-btn-primary" onclick="save()">保存</button>
+</table>
+<script>
+  function save() {
+var $ = layui.$;
+    alert("保存成功");
+    var med_instruments_id = $('#med_instruments_id').val();
+    var med_instruments_name = $('#med_instruments_name').val();
+    var med_instruments_price = $('#med_instruments_price').val();
+    var med_instruments_quantity = $('#med_instruments_quantity').val();
+    var jsonObj = {
+      "med_instruments_id":med_instruments_id,
+      "med_instruments_name":med_instruments_name,
+      "med_instruments_price":med_instruments_price,
+      "med_instruments_quantity":med_instruments_quantity,
+      }
+    var content = JSON.stringify(jsonObj)
+    console.log(jsonObj)
+    console.log(content)
+    $.ajax({
+      type: "post",
+      url: "Med_instrumentsinsert",//*+insert
+      contentType:"application/json;charset=UTF-8",
+      data:content,
+      success:function (data){
+        console.log(data);
+      }
+
+    })
+  }
+
+</script>
+</body>
+</html>
