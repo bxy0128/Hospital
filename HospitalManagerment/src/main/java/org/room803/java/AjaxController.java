@@ -37,6 +37,8 @@ public class AjaxController {
         ToJson.resultSetToJson(r4, "Doctor");
         ResultSet r5 = sql1.ShowTable("Med_instruments");
         ToJson.resultSetToJson(r5, "Med_instruments");
+        ResultSet r6 = sql1.ShowTable("Nurse");
+        ToJson.resultSetToJson(r6, "Nurse");
         System.out.println("success");
 
         return "success";
@@ -191,7 +193,24 @@ public class AjaxController {
                 , doctor.getDoctor_dept(), doctor.getDoctor_phone());
         return doctor;
     }
+    @RequestMapping("/Nurseupdate")//增加护士
+    public Nurse NurseUpdate(@RequestBody Nurse nurse) throws SQLException {
+        System.out.println(nurse);
+        //由于@RestController注解，将list转成json格式返回
+        SQL sql = new SQL();
+        sql.Update("Nurse", nurse.getNurse_id(), nurse.getNurse_name(), nurse.getNurse_gender()
+                , nurse.getNurse_dept(), nurse.getNurse_phone());
+        return nurse;
+    }
 
+@RequestMapping("/Nurseinsert")//增加护士
+public Nurse Nurseinsert(@RequestBody Nurse nurse) throws SQLException {
+    System.out.println(nurse);
+    //由于@RestController注解，将list转成json格式返回
+    SQL sql = new SQL();
+    sql.Insert("Nurse", nurse.getNurse_id(), nurse.getNurse_name(),nurse.getNurse_gender(),nurse.getNurse_dept(),nurse.getNurse_phone());
+    return nurse;
+}
     @RequestMapping("/Doctorinsert")//增加医生
     public Doctor Doctorinsert(@RequestBody Doctor doctor) throws SQLException {
         System.out.println(doctor);
@@ -212,7 +231,15 @@ public class AjaxController {
         System.out.println(doctor);
         return doctor;
     }
+@RequestMapping("/Nursedelete")//删除护士
+public Nurse NurseDelete(@RequestBody Nurse nurse) throws SQLException {
 
+        //由于@RestController注解，将list转成json格式返回
+        SQL sql = new SQL();
+        sql.delete("Nurse", "Nurse_id", nurse.getNurse_id());
+        System.out.println(nurse);
+        return nurse;
+}
     @RequestMapping("/ToOrderupdate")//订单更新
     public ToOrder ToOrderupdate(@RequestBody ToOrder toOrder) throws SQLException {
 
@@ -225,7 +252,7 @@ public class AjaxController {
         return toOrder;
     }
 
-    @RequestMapping(value ="Doctorsearch",method = RequestMethod.POST, produces = "text/html; charset=UTF-8")//病人查询
+    @RequestMapping(value ="Doctorsearch",method = RequestMethod.POST, produces = "text/html; charset=UTF-8")//医生查询
     public String Doctorsearch(@RequestBody String s1) throws SQLException {
 String s2 = s1.substring(3);
 int i = Integer.valueOf(s2).intValue();
@@ -240,6 +267,16 @@ int i = Integer.valueOf(s2).intValue();
 
 
 
+    }
+    @RequestMapping(value ="Nursesearch",method = RequestMethod.POST, produces = "text/html; charset=UTF-8")//护士查询
+    public String Nursesearch(@RequestBody String s1) throws SQLException {
+String s2 = s1.substring(3);
+int i = Integer.valueOf(s2).intValue();
+
+        //由于@RestController注解，将list转成json格式返回
+        SQL sql = new SQL();
+        ResultSet r1 =  sql.Search("Nurse",i);
+        return ToJson.resultSetToJson(r1,"Temp");
     }
     @RequestMapping(value ="Wardsearch",method = RequestMethod.POST, produces = "text/html; charset=UTF-8")//病人查询
     public String Wardsearch(@RequestBody String s1) throws SQLException {

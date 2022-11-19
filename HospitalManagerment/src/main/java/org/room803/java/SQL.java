@@ -18,6 +18,9 @@ public class SQL {
                     // 连接数据库的语句
                     url = "jdbc:sqlserver://192.168.0.108:1433;DatabaseName=Hospital";//数据库连接地址
 
+
+
+
                     userName = "sa";//数据库连接名
                     userPwd = "123456";//数据库连接密码
                     conn = DriverManager.getConnection(url, userName, userPwd);
@@ -124,6 +127,13 @@ public class SQL {
 
                         " where " + "order" +"_id" + "=" + i);
                 break;
+            case "Nurse" :
+                alter = sql.executeUpdate("UPDATE "+s1 + " set "+" nurse_name" + " = " + "'"+values[0] +"'"+","+
+                        "nurse_gender" + "=" + "'"+values[1] +"'"+","+"nurse_dept" + "=" +"'"+ values[2]+"'" +","
+                        +"nurse_phone" + "=" + "'"+values[3] +"'"+
+                        " where " + s1 + "_id" + " = " + i);
+                System.out.println("ok");
+                break;
 
         }
 
@@ -185,6 +195,13 @@ public class SQL {
             alter = sql.executeUpdate("INSERT INTO " + s1  + " VALUES " + t1.set());//list已知，set需设置
             System.out.println(t1.set());
             break;
+            case "nurse"://护士
+            Nurse n1 = new Nurse(i,values[0],values[1],values[2],values[3]);
+            String s28 = "INSERT into " + s1  + " values " + n1.set();
+            System.out.println(s28);
+            alter = sql.executeUpdate("INSERT INTO " + s1  + " VALUES " + n1.set());//list已知，set需设置
+            System.out.println(n1.set());
+            break;
 
     }
 
@@ -245,6 +262,13 @@ public class SQL {
                 }
             }
             break;
+            case "nurse": {
+                try {
+                    rs = sql.executeQuery("SELECT * FROM " + s1 + " WHERE " + s1 + "_id = " + i);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
 
 
 

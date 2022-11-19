@@ -19,6 +19,8 @@ public class main {
         ToJson.resultSetToJson(r4,"Doctor");
         ResultSet r5 =  sql1.ShowTable("Med_instruments");
         ToJson.resultSetToJson(r5,"Med_instruments");
+        ResultSet r6 =  sql1.ShowTable("Nurse");
+        ToJson.resultSetToJson(r6,"Nurse");
 
 
 

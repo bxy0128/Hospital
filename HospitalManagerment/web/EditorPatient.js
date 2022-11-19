@@ -134,6 +134,16 @@ function createTable(t, editor, deltes, read) {
                             data: json2,
                             success: function (data) {
                                 // console.log(data);
+                                var abc = 1;
+                                $.ajax({
+                                    url: "renovate",
+                                    type:"post",
+                                    data: {temp:abc},
+                                    success: function (data) {
+                                        console.log(data);
+                                    }
+
+                                })
                             }
 
                         })

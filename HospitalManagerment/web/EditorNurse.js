@@ -20,9 +20,9 @@ function createTable(t, editor, deltes, read) {
     /*以此获得html前缀，以Ward.html为例，只取Ward，用做json的导入和Ajax的发送
     * , url: 'json/'+page +'.json' //json数据的导入
     * url: page+"delete",AJAX数据的发送目标
-    * 所以要将所有patient、doctor的展示操作页面全部以Patient.html来命名，以免名称错误
-    * json文件和Spring mvc 的命令也同样以Patient.json、Doctor.json||Patientdelete、Patientupdate
-    * Doctordelete、Doctorupdate命名 */
+    * 所以要将所有patient、nurse的展示操作页面全部以Patient.html来命名，以免名称错误
+    * json文件和Spring mvc 的命令也同样以Patient.json、nurse.json||Patientdelete、Patientupdate
+    * nursedelete、nurseupdate命名 */
     layui.use(['form', 'table', 'layer'], function () {
         var $ = layui.jquery,
             form = layui.form,
@@ -33,7 +33,7 @@ function createTable(t, editor, deltes, read) {
         table.render({
             elem: '#' + (t.id || 'test')
             , height: 700
-            , url: 'json/Med_Instruments.json' //数据接口
+            , url: 'json/Nurse.json' //数据接口
             , page: true //开启分页
             ,cols: [ //表头
                 t.cols
@@ -81,25 +81,28 @@ function createTable(t, editor, deltes, read) {
                     //yes函数是点击弹窗后回调的函数
                     ,yes: function(index, layero){
                         //通过以下的方法获取回调的数值
-                        var med_instruments_id = $(layero).find('iframe')[0].contentWindow.med_instruments_id.value;
-                        var med_instruments_name = $(layero).find('iframe')[0].contentWindow.med_instruments_name.value;
-                        var med_instruments_price = $(layero).find('iframe')[0].contentWindow.med_instruments_price.value;
-                        var med_instruments_quantity = $(layero).find('iframe')[0].contentWindow.med_instruments_quantity.value;
+                        var nurse_id = $(layero).find('iframe')[0].contentWindow.nurse_id.value;
+                        var nurse_name = $(layero).find('iframe')[0].contentWindow.nurse_name.value;
+                        var nurse_gender = $(layero).find('iframe')[0].contentWindow.nurse_gender.value;
+                        var nurse_dept = $(layero).find('iframe')[0].contentWindow.nurse_dept.value;
+                        var nurse_phone = $(layero).find('iframe')[0].contentWindow.nurse_phone.value;
 
                         //同步数据表格中的数据
                         obj.update({
-                            med_instruments_id:med_instruments_id,
-                            med_instruments_name:med_instruments_name,
-                            med_instruments_price:med_instruments_price,
-                            med_instruments_quantity:med_instruments_quantity,
+                            nurse_id:nurse_id,
+                            nurse_name:nurse_name,
+                            nurse_gender:nurse_gender,
+                            nurse_dept:nurse_dept,
+                            nurse_phone:nurse_phone,
 
                         })
                         const json =
                             {
-                                med_instruments_id: med_instruments_id,
-                                med_instruments_name: med_instruments_name,
-                                med_instruments_price: med_instruments_price,
-                                med_instruments_quantity: med_instruments_quantity,
+                                nurse_id: nurse_id,
+                                nurse_name: nurse_name,
+                                nurse_gender: nurse_gender,
+                                nurse_dept: nurse_dept,
+                                nurse_phone: nurse_phone,
 
 
                             }
@@ -137,10 +140,11 @@ function createTable(t, editor, deltes, read) {
 
                         var iframeWindow = window['layui-layer-iframe'+ index]  // 得到iframe页的窗口对象
                         //通过test1.html中各个输入框的id可以进行赋值
-                        body.find("#med_instruments_id").val(data.med_instruments_id);
-                        body.find("#med_instruments_name").val(data.med_instruments_name)
-                        body.find("#med_instruments_price").val(data.med_instruments_price)
-                        body.find("#med_instruments_quantity").val(data.med_instruments_quantity)
+                        body.find("#nurse_id").val(data.nurse_id);
+                        body.find("#nurse_name").val(data.nurse_name)
+                        body.find("#nurse_gender").val(data.nurse_gender)
+                        body.find("#nurse_dept").val(data.nurse_dept)
+                        body.find("#nurse_phone").val(data.nurse_phone)
 
 
                     }
@@ -158,7 +162,7 @@ function openDetial(title, area, path, sucFunName, callBack) {
     layer.open({
         type: 2,
         title: title, //不显示标题栏
-        area: ['450px', '450px'],
+        area: ['450px', '500px'],
         shade: 0.8,
         maxmin:true,
         shadeClose: true,

@@ -2,7 +2,6 @@ package org.room803.java;
 
 
 import com.google.gson.Gson;
-
 import net.sf.json.JSONArray;
 import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
@@ -14,7 +13,6 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.sql.SQLOutput;
 
 public class ToJson {
     /*
@@ -55,6 +53,7 @@ public class ToJson {
         System.out.println(s1);
         JSONObject jsonObject = JSONObject.fromObject(s1);
         String s2 = "D:\\桌面\\Hospital\\HospitalManagerment\\web\\json\\"+ s + ".json";
+        //D:\桌面\Hospital\HospitalManagerment\web\json
         File file = new File(s2);//将获取到的数据库列表传输到source文件夹内
         try {
             FileUtils.write(file, jsonObject.toString(), "utf-8", false);

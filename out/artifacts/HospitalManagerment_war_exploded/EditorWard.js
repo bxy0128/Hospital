@@ -7,17 +7,7 @@
  * @returns {}
  */
 function createTable(t, editor, deltes, read) {
-    var $ = layui.$;
-    var abc = 1;
-    $.ajax({
-        url: "renovate",
-        type:"post",
-        data: {temp:abc},
-        success: function (data) {
-           console.log(data);
-        }
 
-    })
     var bodys = document.getElementsByTagName("body")[0];
     bodys.innerHTML += '<table class="layui-hide" id="test" lay-filter="demo"></' + 'table>' +
         '<script type="text/html" id="barDemo">' +
@@ -126,14 +116,27 @@ function createTable(t, editor, deltes, read) {
                             data: json2,
                             success: function (data) {
                                 // console.log(data);
+                                var abc = 1;
+                                $.ajax({
+                                    url: "renovate",
+                                    type:"post",
+                                    data: {temp:abc},
+                                    success: function (data) {
+                                        console.log(data);
+                                    }
+
+                                })
                             }
 
                         })
+
+
                         layer.close(index);
                         console.log(obj.data)
 
                     }
                     ,success: function(layero, index){
+
 
                         var div = layero.find('iframe').contents().find('#useradmin');  // div.html() div里面的内容,不包含当前这个div
 
