@@ -68,13 +68,13 @@
         var doctor_id = $('#doctor_id').val();
         var doctor_name = $('#doctor_name').val();
         var doctor_gender = $('#doctor_gender').val();
-        var doctor_dept_id = $('#doctor_dept_id').val();
+        var doctor_dept = $('#doctor_dept').val();
         var doctor_phone = $('#doctor_phone').val();
         var jsonObj = {
             "doctor_id":doctor_id,
             "doctor_name":doctor_name,
             "doctor_gender":doctor_gender,
-            "doctor_dept_id":doctor_dept_id,
+            "doctor_dept":doctor_dept,
             "doctor_phone":doctor_phone}
         var content = JSON.stringify(jsonObj)
         console.log(jsonObj)
@@ -85,6 +85,17 @@
             contentType:"application/json;charset=UTF-8",
             data:content,
             success:function (data){
+                var abc = 1;
+                $.ajax({
+                    url: "renovate",
+                    type:"post",
+                    data: {temp:abc},
+                    success: function (data) {
+                        console.log(data);
+                    }
+
+                })
+                // console.log(data);
                 console.log(data);
             }
 

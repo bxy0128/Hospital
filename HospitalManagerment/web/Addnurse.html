@@ -1,88 +1,87 @@
 <!DOCTYPE html>
-<html lang="en"xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css">
 <link rel="stylesheet" href="CSS/adminLogin.css">
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-<table class="addward">
+<table class="addnurse">
+
     <div class="WrapDiv">
         <div class="Label">
-            <label>住院病人编号:</label>
+            <label>护士编号:</label>
         </div>
         <div class="Div">
             <i class="layui-icon  adminIcon"></i>
-            <input id="patient_inhospital_id" class="layui-input adminInput" type="text" name="username"
+            <input id="nurse_id" class="layui-input adminInput" type="text" name="username"
                    placeholder="请输入">
         </div>
     </div>
     <div class="WrapDiv">
         <div class="Label">
-            <label>&nbsp&nbsp&nbsp;病床科室:</label>
+            <label>护士姓名:</label>
         </div>
         <div class="Div">
             <i class="layui-icon  adminIcon"></i>
-            <input id="ward_dept" class="layui-input adminInput" type="text" name="username"
+            <input id="nurse_name" class="layui-input adminInput" type="text" name="username"
                    placeholder="请输入">
         </div>
     </div>
     <div class="WrapDiv">
         <div class="Label">
-            <label>&nbsp&nbsp&nbsp;病房编号:</label>
+            <label>护士性别:</label>
         </div>
         <div class="Div">
             <i class="layui-icon  adminIcon"></i>
-            <input id="ward_id" class="layui-input adminInput" type="text" name="username"
+            <input id="nurse_gender" class="layui-input adminInput" type="text" name="username"
                    placeholder="请输入">
         </div>
     </div>
     <div class="WrapDiv">
         <div class="Label">
-            <label>&nbsp&nbsp&nbsp;病房床位:</label>
+            <label>科室编号:</label>
         </div>
         <div class="Div">
             <i class="layui-icon  adminIcon"></i>
-            <input id="ward_bednum" class="layui-input adminInput" type="text" name="username"
+            <input id="nurse_dept" class="layui-input adminInput" type="text" name="username"
                    placeholder="请输入">
         </div>
     </div>
     <div class="WrapDiv">
         <div class="Label">
-            <label>&nbsp&nbsp&nbsp;入院日期:</label>
+            <label>护士电话:</label>
         </div>
         <div class="Div">
             <i class="layui-icon  adminIcon"></i>
-            <input id="patient_date_start" class="layui-input adminInput" type="text" name="username"
+            <input id="nurse_phone" class="layui-input adminInput" type="text" name="username"
                    placeholder="请输入">
         </div>
     </div>
     <button class="submit1 layui-btn layui-btn-primary" onclick="save()">保存</button>
-
 </table>
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
 <script>
     function save() {
         alert("保存成功");
-        var patient_inhospital_id = $('#patient_inhospital_id').val();
-        var ward_dept = $('#ward_dept').val();
-        var ward_id = $('#ward_id').val();
-        var ward_bednum = $('#ward_bednum').val();
-        var patient_date_start = $('#patient_date_start').val();
+        var nurse_id = $('#nurse_id').val();
+        var nurse_name = $('#nurse_name').val();
+        var nurse_gender = $('#nurse_gender').val();
+        var nurse_dept = $('#nurse_dept').val();
+        var nurse_phone = $('#nurse_phone').val();
         var jsonObj = {
-            "patient_inhospital_id":patient_inhospital_id,
-            "ward_dept":ward_dept,
-            "ward_id":ward_id,
-            "ward_bednum":ward_bednum,
-            "patient_date_start":patient_date_start}
+            "nurse_id":nurse_id,
+            "nurse_name":nurse_name,
+            "nurse_gender":nurse_gender,
+            "nurse_dept":nurse_dept,
+            "nurse_phone":nurse_phone}
         var content = JSON.stringify(jsonObj)
-
         console.log(jsonObj)
         console.log(content)
         $.ajax({
             type: "post",
-            url: "Wardinsert",//*+insert
+            url: "Nurseinsert",//*+insert
             contentType:"application/json;charset=UTF-8",
             data:content,
             success:function (data){

@@ -195,7 +195,7 @@ public class SQL {
             alter = sql.executeUpdate("INSERT INTO " + s1  + " VALUES " + t1.set());//list已知，set需设置
             System.out.println(t1.set());
             break;
-            case "nurse"://护士
+            case "Nurse"://护士
             Nurse n1 = new Nurse(i,values[0],values[1],values[2],values[3]);
             String s28 = "INSERT into " + s1  + " values " + n1.set();
             System.out.println(s28);

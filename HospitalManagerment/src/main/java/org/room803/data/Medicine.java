@@ -15,7 +15,7 @@ public class Medicine {
 
     public String set() {
         String s;
-        s = "(" + medicine_id + "," + medicine_name + "," + medicine_price + "," + medicine_quantity + ")";
+        s = "(" + medicine_id + "," +"'"+ medicine_name +"'"+ "," + medicine_price + "," + medicine_quantity + ")";
         //在数据库查询中，需要用到的(值1，值2，值3...)
         return s;
 
