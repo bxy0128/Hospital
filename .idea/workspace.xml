@@ -9,7 +9,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="949e9575-9c5a-421a-8725-bff66263c4f3" name="变更" comment="15点32分  10-27" />
+    <list default="true" id="949e9575-9c5a-421a-8725-bff66263c4f3" name="变更" comment="15点32分  10-27">
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/data/Ward.java" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/data/Ward.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/java/AjaxController.java" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/java/AjaxController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/java/SQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/java/SQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/java/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/src/main/java/org/room803/java/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalManagerment/web/Addward.html" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/web/Addward.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalManagerment/web/EditorWard.html" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/web/EditorWard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalManagerment/web/EditorWard.js" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/web/EditorWard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalManagerment/web/json/Doctor.json" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/web/json/Doctor.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalManagerment/web/json/Nurse.json" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalManagerment/web/json/Nurse.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/Addward.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/Addward.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/EditorDoctor.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/EditorDoctor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/EditorMed_Instruments.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/EditorMed_Instruments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/EditorMedicine.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/EditorMedicine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/EditorPatient.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/EditorPatient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/EditorWard.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/EditorWard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/EditorWard.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/EditorWard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/WEB-INF/classes/org/room803/data/Ward.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/WEB-INF/classes/org/room803/data/Ward.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/WEB-INF/classes/org/room803/java/AjaxController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/WEB-INF/classes/org/room803/java/AjaxController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/WEB-INF/classes/org/room803/java/SQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/WEB-INF/classes/org/room803/java/SQL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/Ward.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/HospitalManagerment_war_exploded/Ward.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,7 +114,7 @@
   <component name="RunDashboard">
     <option name="openRunningConfigInTab" value="true" />
   </component>
-  <component name="RunManager" selected="应用程序.main">
+  <component name="RunManager" selected="Tomcat 服务器.Tomcat 9">
     <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.room803.java.main" />
       <module name="HospitalManagerment" />
@@ -289,7 +312,7 @@
       <workItem from="1668687665461" duration="3678000" />
       <workItem from="1668855193642" duration="10131000" />
       <workItem from="1668875121032" duration="2144000" />
-      <workItem from="1668926649711" duration="933000" />
+      <workItem from="1668926649711" duration="2090000" />
     </task>
     <task id="LOCAL-00001" summary="11点30分">
       <created>1666841689263</created>
@@ -354,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668926981058</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="15点32分  10-27">
+      <created>1668928205024</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1668928205024</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

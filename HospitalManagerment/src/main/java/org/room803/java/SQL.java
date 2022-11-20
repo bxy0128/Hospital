@@ -98,10 +98,12 @@ public class SQL {
                 break;
             case "Ward"://病床修改
                 alter = sql.executeUpdate("UPDATE "+ s1 +" set "+
-                        "ward_bednum"+ " = "+ values[0]+"," +
-                        "patient_date_start"+ " = "+"'"+ values[1]+
-                        "'"+","+"patient_inhospital_id"+ " = "+ values[2]+","+
-                        "ward_dept"+ " = "+ "'"+values[3]+"'" +"ward_doc_id"+values[4]+"ward_nurse_id"+values[5]+
+                        "dept_bednum"+ " = "+ values[0]+"," +
+                        "patient_date_start"+ " = "+"'"+ values[1]+ "'"+","+
+                        "patient_inhospital_id"+ " = "+ values[2]+","+
+                        "ward_dept"+ " = "+ "'"+values[3]+"'" +","+
+                        "ward_doc_id"+"="+values[4]+","+
+                        "ward_nurse_id"+"="+values[5]+
                         " where " + s1 +"_id" + "=" + i );
                 break;
             case "Medicine"://药物修改

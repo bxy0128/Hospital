@@ -12,7 +12,7 @@ public class Ward {
      * 病房的信息_数据库各列名
      */ 
     private int ward_id;//病床编号
-    private String ward_bednum;//病床床位
+    private String dept_bednum;//病床床位
     private String patient_date_start;//入院日期
     private String patient_inhospital_id;//住院病人编号
     private String ward_dept;//病床科室
@@ -26,7 +26,7 @@ public class Ward {
         String s;
 
 
-        s = "("+ward_id+","+ward_bednum+","+"'"+patient_date_start+"'"+","+patient_inhospital_id+","+
+        s = "("+ward_id+","+dept_bednum+","+"'"+patient_date_start+"'"+","+patient_inhospital_id+","+
                 "'" +ward_dept+ "'" +ward_doc_id+ward_nurse_id+")";
 
         //在数据库查询中，需要用到的(值1，值2，值3...)
@@ -35,7 +35,7 @@ public class Ward {
 
     public String list() {
         String s;
-        s = "(ward_id,ward_bednum,patient_date_start,patient_inhospital_id,ward_dept,ward_doc_id,ward_nurse_id)";
+        s = "(ward_id,dept_bednum,patient_date_start,patient_inhospital_id,ward_dept,ward_doc_id,ward_nurse_id)";
         return s;
         //在数据库查询中，需要用到(列名1，列名2，列名3...)
 

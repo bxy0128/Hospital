@@ -104,10 +104,12 @@
  tableObj = { id: 'test', indexName: 'ID', height: 'full-30', url: 'json/Ward.json', page: false,
     cols: [
       {field: 'ward_id', title: '病房编号', edit: true, width: 120, edit: true, sort: true, fixed: 'left'},
-      {field: 'ward_dept', title: '病床科室', edit: true, width: 120},
       {field: "patient_inhospital_id", title: '住院病人编号', width: 120},
-      {field: 'ward_bednum', title: '病房床位', edit: true, width: 100},
+      {field: 'ward_dept', title: '病床科室', edit: true, width: 120},
+      {field: 'dept_bednum', title: '病房床位', edit: true, width: 100},
       {field: 'patient_date_start', title: '入院日期', edit: true, width: 120},
+      {field: 'ward_doc_id', title: '主治医师编号', edit: true, width: 120},
+      {field: 'ward_nurse_id', title: '护士编号', edit: true, width: 120},
       {fixed: 'right', title: addButton, width: 200, align: 'center', toolbar: '#barDemo'}
     ] };
   $(document).ready(function() {

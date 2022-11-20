@@ -98,7 +98,7 @@ public class AjaxController {
         System.out.println(ward);
         //由于@RestController注解，将list转成json格式返回
         SQL sql = new SQL();
-        sql.Insert("Ward", ward.getWard_id(), ward.getWard_bednum(), ward.getPatient_date_start(),
+        sql.Insert("Ward", ward.getWard_id(), ward.getDept_bednum(), ward.getPatient_date_start(),
                 ward.getPatient_inhospital_id(), ward.getWard_dept());
 
         return ward;
@@ -109,7 +109,7 @@ public class AjaxController {
         System.out.println(ward);
         //由于@RestController注解，将list转成json格式返回
         SQL sql = new SQL();
-        sql.Update("Ward", ward.getWard_id(), ward.getWard_bednum(), ward.getPatient_date_start(),
+        sql.Update("Ward", ward.getWard_id(), ward.getDept_bednum(), ward.getPatient_date_start(),
                 ward.getPatient_inhospital_id(), ward.getWard_dept(),ward.getWard_doc_id(),ward.getWard_nurse_id());
         return ward;
     }

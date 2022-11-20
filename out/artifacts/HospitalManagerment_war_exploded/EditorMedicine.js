@@ -62,6 +62,16 @@ function createTable(t, editor, deltes, read) {
                         contentType: "application/json;charset=UTF-8",
                         data: content,
                         success: function (data) {
+                            var abc = 1;
+                            $.ajax({
+                                url: "renovate",
+                                type:"post",
+                                data: {temp:abc},
+                                success: function (data) {
+                                    console.log(data);
+                                }
+
+                            })
                             // console.log(data);
                         }
 

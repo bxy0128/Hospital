@@ -63,6 +63,16 @@ function createTable(t, editor, deltes, read) {
                         contentType: "application/json;charset=UTF-8",
                         data: content,
                         success: function (data) {
+                            var abc = 1;
+                            $.ajax({
+                                url: "renovate",
+                                type:"post",
+                                data: {temp:abc},
+                                success: function (data) {
+                                    console.log(data);
+                                }
+
+                            })
                             // console.log(data);
                         }
 
@@ -85,16 +95,20 @@ function createTable(t, editor, deltes, read) {
                         var patient_inhospital_id = $(layero).find('iframe')[0].contentWindow.patient_inhospital_id.value;
                         var ward_dept = $(layero).find('iframe')[0].contentWindow.ward_dept.value;
                         var ward_id = $(layero).find('iframe')[0].contentWindow.ward_id.value;
-                        var ward_bednum = $(layero).find('iframe')[0].contentWindow.ward_bednum.value;
+                        var dept_bednum = $(layero).find('iframe')[0].contentWindow.dept_bednum.value;
                         var patient_date_start = $(layero).find('iframe')[0].contentWindow.patient_date_start.value;
+                        var ward_doc_id = $(layero).find('iframe')[0].contentWindow.ward_doc_id.value;
+                        var ward_nurse_id = $(layero).find('iframe')[0].contentWindow.ward_nurse_id.value;
 
                         //同步数据表格中的数据
                         obj.update({
                             patient_inhospital_id:patient_inhospital_id,
                             ward_dept:ward_dept,
                             ward_id:ward_id,
-                            ward_bednum:ward_bednum,
+                            dept_bednum:dept_bednum,
                             patient_date_start:patient_date_start,
+                            ward_nurse_id:ward_nurse_id,
+                            ward_doc_id:ward_doc_id,
 
                         })
                         const json =
@@ -102,10 +116,10 @@ function createTable(t, editor, deltes, read) {
                                 patient_inhospital_id: patient_inhospital_id,
                                 ward_dept: ward_dept,
                                 ward_id: ward_id,
-                                ward_bednum: ward_bednum,
+                                dept_bednum: dept_bednum,
                                 patient_date_start: patient_date_start,
-
-
+                                ward_nurse_id:ward_nurse_id,
+                                ward_doc_id:ward_doc_id,
                             }
                         var json2 = JSON.stringify(json);
                         //利用ajax同步数据库的数据，具体的后端自己实现吧
@@ -147,8 +161,10 @@ function createTable(t, editor, deltes, read) {
                         body.find("#patient_inhospital_id").val(data.patient_inhospital_id);
                         body.find("#ward_dept").val(data.ward_dept)
                         body.find("#ward_id").val(data.ward_id)
-                        body.find("#ward_bednum").val(data.ward_bednum)
+                        body.find("#dept_bednum").val(data.dept_bednum)
                         body.find("#patient_date_start").val(data.patient_date_start)
+                        body.find("#ward_nurse_id").val(data.ward_nurse_id)
+                        body.find("#ward_doc_id").val(data.ward_doc_id)
 
 
                     }
