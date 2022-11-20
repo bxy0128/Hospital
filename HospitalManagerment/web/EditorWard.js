@@ -97,6 +97,8 @@ function createTable(t, editor, deltes, read) {
                         var ward_id = $(layero).find('iframe')[0].contentWindow.ward_id.value;
                         var ward_bednum = $(layero).find('iframe')[0].contentWindow.ward_bednum.value;
                         var patient_date_start = $(layero).find('iframe')[0].contentWindow.patient_date_start.value;
+                        var ward_doc_id = $(layero).find('iframe')[0].contentWindow.ward_bednum.value;
+                        var ward_nurse_id = $(layero).find('iframe')[0].contentWindow.ward_bednum.value;
 
                         //同步数据表格中的数据
                         obj.update({
@@ -105,6 +107,8 @@ function createTable(t, editor, deltes, read) {
                             ward_id:ward_id,
                             ward_bednum:ward_bednum,
                             patient_date_start:patient_date_start,
+                            ward_nurse_id:ward_nurse_id,
+                            ward_doc_id:ward_doc_id,
 
                         })
                         const json =
@@ -114,8 +118,8 @@ function createTable(t, editor, deltes, read) {
                                 ward_id: ward_id,
                                 ward_bednum: ward_bednum,
                                 patient_date_start: patient_date_start,
-
-
+                                ward_nurse_id:ward_nurse_id,
+                                ward_doc_id:ward_doc_id,
                             }
                         var json2 = JSON.stringify(json);
                         //利用ajax同步数据库的数据，具体的后端自己实现吧
@@ -159,6 +163,8 @@ function createTable(t, editor, deltes, read) {
                         body.find("#ward_id").val(data.ward_id)
                         body.find("#ward_bednum").val(data.ward_bednum)
                         body.find("#patient_date_start").val(data.patient_date_start)
+                        body.find("#ward_nurse_id").val(data.ward_nurse_id)
+                        body.find("#ward_doc_id").val(data.ward_doc_id)
 
 
                     }
