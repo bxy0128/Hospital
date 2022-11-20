@@ -101,7 +101,7 @@ public class SQL {
                         "ward_bednum"+ " = "+ values[0]+"," +
                         "patient_date_start"+ " = "+"'"+ values[1]+
                         "'"+","+"patient_inhospital_id"+ " = "+ values[2]+","+
-                        "ward_dept"+ " = "+ "'"+values[3]+"'" +
+                        "ward_dept"+ " = "+ "'"+values[3]+"'" +"ward_doc_id"+values[4]+"ward_nurse_id"+values[5]+
                         " where " + s1 +"_id" + "=" + i );
                 break;
             case "Medicine"://药物修改
@@ -161,7 +161,7 @@ public class SQL {
             System.out.println("增加成功");
             break;
         case "Ward"://病床
-            Ward w1 = new Ward(i,values[0],values[1],values[2],values[3]);
+            Ward w1 = new Ward(i,values[0],values[1],values[2],values[3],values[4],values[5]);
             String s23 = "INSERT into " + s1  + " values " + w1.set();
             System.out.println(s23);
             alter = sql.executeUpdate("INSERT INTO " + s1  + " VALUES " + w1.set());//list已知，set需设置

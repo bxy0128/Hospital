@@ -110,7 +110,7 @@ public class AjaxController {
         //由于@RestController注解，将list转成json格式返回
         SQL sql = new SQL();
         sql.Update("Ward", ward.getWard_id(), ward.getWard_bednum(), ward.getPatient_date_start(),
-                ward.getPatient_inhospital_id(), ward.getWard_dept());
+                ward.getPatient_inhospital_id(), ward.getWard_dept(),ward.getWard_doc_id(),ward.getWard_nurse_id());
         return ward;
     }
 
